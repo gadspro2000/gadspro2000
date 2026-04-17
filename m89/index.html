@@ -11,56 +11,107 @@
 <meta property="og:image" content="https://gadspro2000.com/m89/og.jpg">
 <meta property="og:url" content="https://gadspro2000.com/m89">
 <meta property="og:type" content="website">
-<meta property="og:site_name" content="M89">
-
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Welcome to M89">
-<meta name="twitter:description" content="Brand New Interactive Experience">
-<meta name="twitter:image" content="https://gadspro2000.com/m89/og.jpg">
 
 <link rel="icon" href="favicon.ico" sizes="any">
-<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
-<link rel="apple-touch-icon" sizes="180x180" href="favicon-180.png">
 <link rel="preload" as="image" href="banner.webp" type="image/webp">
-<link rel="preload" as="image" href="banner-optimized.jpg" type="image/jpeg">
 
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 html,body{background:#000;color:#fff;font-family:Arial,Helvetica,sans-serif;overflow-x:hidden}
-body{min-height:100vh}
 .container{width:min(100%,1920px);margin:0 auto;padding:24px 12px 40px;text-align:center}
-h1{font-size:clamp(32px,5vw,68px);font-weight:800;letter-spacing:.02em;line-height:1.05;margin:0 0 10px}
-p{font-size:clamp(18px,2vw,28px);color:#d7d7d7;margin:0 0 22px}
-.banner-wrap{width:100%;max-width:750px;margin:0 auto 28px;border-radius:18px;overflow:hidden;box-shadow:0 10px 30px rgba(255,255,255,.06)}
-.banner{display:block;width:100%;height:auto;aspect-ratio:750/600;object-fit:contain;background:#000}
-.cta{position:relative;display:inline-block;padding:3px;border-radius:999px;text-decoration:none;background:linear-gradient(90deg,#ff0000,#ff7a00,#ffee00,#00ff85,#00c3ff,#7a00ff,#ff00c8,#ff0000);background-size:300% 100%;animation:flow 2.8s linear infinite}
-.cta span{display:inline-block;background:#000;color:#fff;padding:15px 34px;border-radius:999px;font-size:18px;font-weight:800;letter-spacing:.04em;line-height:1;min-width:190px}
-@keyframes flow{0%{background-position:0% 50%}100%{background-position:300% 50%}}
-@media (max-width:768px){
-.container{padding:18px 10px 32px}
-h1{margin-bottom:8px}
-p{margin-bottom:16px}
-.banner-wrap{margin-bottom:22px;border-radius:14px}
-.cta span{padding:14px 24px;font-size:16px;min-width:170px}
+
+/* ✨ 金色標題 */
+h1{
+  font-size:clamp(32px,5vw,68px);
+  font-weight:900;
+  letter-spacing:.03em;
+  background:linear-gradient(90deg,#FFD700,#FFC107,#FFB300);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  text-shadow:0 0 12px rgba(255,215,0,0.4);
+  margin-bottom:10px;
 }
+
+/* ✨ 金色副標 */
+p{
+  font-size:clamp(18px,2vw,28px);
+  background:linear-gradient(90deg,#FFE082,#FFD54F);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  margin-bottom:22px;
+}
+
+.banner-wrap{
+  width:100%;
+  max-width:750px;
+  margin:0 auto 28px;
+  border-radius:18px;
+  overflow:hidden;
+  box-shadow:0 10px 30px rgba(255,255,255,.06);
+}
+
+.banner{
+  display:block;
+  width:100%;
+  height:auto;
+  aspect-ratio:750/600;
+  object-fit:contain;
+  background:#000;
+}
+
+/* 🔥 彩虹流光按鈕升級 */
+.cta{
+  position:relative;
+  display:inline-block;
+  padding:3px;
+  border-radius:999px;
+  text-decoration:none;
+  background:linear-gradient(90deg,#ff0000,#ff7a00,#ffee00,#00ff85,#00c3ff,#7a00ff,#ff00c8,#ff0000);
+  background-size:300% 100%;
+  animation:flow 2.5s linear infinite;
+}
+
+.cta span{
+  display:inline-block;
+  background:#000;
+  color:#FFD700;
+  padding:16px 36px;
+  border-radius:999px;
+  font-size:18px;
+  font-weight:900;
+  letter-spacing:.08em;
+}
+
+.cta:hover span{
+  background:#050505;
+  color:#fff;
+}
+
+@keyframes flow{
+  0%{background-position:0% 50%}
+  100%{background-position:300% 50%}
+}
+
 </style>
 </head>
+
 <body>
 <main class="container">
+
 <h1>Welcome to M89</h1>
 <p>Brand New Interactive Experience</p>
 
 <div class="banner-wrap">
   <picture>
     <source srcset="banner.webp" type="image/webp">
-    <img class="banner" src="banner-optimized.jpg" alt="M89 banner" width="750" height="600" fetchpriority="high" decoding="async">
+    <img class="banner" src="banner-optimized.jpg" alt="M89 banner">
   </picture>
 </div>
 
-<a class="cta" href="https://fbads.m8989.net/login?id=register" target="_blank" rel="noopener noreferrer">
-  <span>JOIN&amp;GET20</span>
+<a class="cta" href="https://fbads.m8989.net/login?id=register" target="_blank">
+  <span>JOIN&GET20</span>
 </a>
+
 </main>
 </body>
 </html>
