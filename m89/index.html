@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Welcome to M89</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: #000;
+      color: #fff;
+      font-family: Arial, Helvetica, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      overflow-x: hidden;
+    }
+    .container {
+      width: 100%;
+      max-width: 1920px;
+      text-align: center;
+      padding: 32px 16px 48px;
+    }
+    h1 {
+      font-size: clamp(34px, 6vw, 72px);
+      font-weight: 800;
+      letter-spacing: 1px;
+      margin-bottom: 14px;
+    }
+    p {
+      font-size: clamp(18px, 2.2vw, 30px);
+      color: #d9d9d9;
+      margin-bottom: 28px;
+    }
+    .banner-wrap {
+      width: 100%;
+      max-width: 1920px;
+      margin: 0 auto 36px;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 12px 40px rgba(255,255,255,0.08);
+    }
+    .banner {
+      width: 100%;
+      aspect-ratio: 1920 / 600;
+      display: block;
+      object-fit: cover;
+    }
+    .cta {
+      position: relative;
+      display: inline-block;
+      padding: 3px;
+      border-radius: 999px;
+      background: linear-gradient(
+        90deg,
+        #ff0000,
+        #ff7a00,
+        #ffee00,
+        #00ff85,
+        #00c3ff,
+        #7a00ff,
+        #ff00c8,
+        #ff0000
+      );
+      background-size: 300% 100%;
+      animation: rainbowFlow 3s linear infinite;
+      text-decoration: none;
+    }
+    .cta span {
+      display: inline-block;
+      background: #000;
+      color: #fff;
+      padding: 16px 38px;
+      border-radius: 999px;
+      font-size: 18px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      transition: transform 0.2s ease, background 0.2s ease;
+    }
+    .cta:hover span {
+      transform: scale(1.04);
+      background: #050505;
+    }
+    @keyframes rainbowFlow {
+      0% { background-position: 0% 50%; }
+      100% { background-position: 300% 50%; }
+    }
+    @media (max-width: 768px) {
+      .container { padding: 24px 12px 40px; }
+      .cta span { padding: 14px 28px; font-size: 16px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Welcome to M89</h1>
+    <p>Brand New Interactive Experience</p>
+
+    <div class="banner-wrap">
+      <img class="banner" src="banner.jpg" alt="M89 banner"/>
+    </div>
+
+    <a class="cta" href="https://fbads.m8989.net/login?id=register" target="_blank">
+      <span>JOIN&GET20</span>
+    </a>
+  </div>
+</body>
+</html>
