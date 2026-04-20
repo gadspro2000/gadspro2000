@@ -1,117 +1,622 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Welcome to M89</title>
-<meta name="description" content="Brand New Interactive Experience">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GameAds Pro | Gaming Advertising That Performs</title>
+  <link rel="icon" type="image/png" href="logo.png">
+  <meta name="description" content="GameAds Pro specializes in high-performance advertising for gaming brands. Reach the right players and maximize ROI with data-driven campaigns." />
+  <style>
+    :root {
+      --bg: #0b1020;
+      --bg-soft: #111830;
+      --card: rgba(255,255,255,0.06);
+      --text: #f5f7ff;
+      --muted: #b7c0e0;
+      --line: rgba(255,255,255,0.12);
+      --accent: #7c5cff;
+      --accent-2: #1ed6a8;
+      --shadow: 0 20px 50px rgba(0,0,0,0.35);
+      --radius: 22px;
+      --max: 1140px;
+    }
 
-<meta property="og:title" content="Welcome to M89">
-<meta property="og:description" content="Brand New Interactive Experience">
-<meta property="og:image" content="https://gadspro2000.com/m89/og.jpg">
-<meta property="og:url" content="https://gadspro2000.com/m89">
-<meta property="og:type" content="website">
+    * { box-sizing: border-box; }
 
-<link rel="icon" href="favicon.ico" sizes="any">
-<link rel="preload" as="image" href="banner.webp" type="image/webp">
+    html { scroll-behavior: smooth; }
 
-<style>
-*{box-sizing:border-box;margin:0;padding:0}
-html,body{background:#000;color:#fff;font-family:Arial,Helvetica,sans-serif;overflow-x:hidden}
-.container{width:min(100%,1920px);margin:0 auto;padding:24px 12px 40px;text-align:center}
+    body {
+      margin: 0;
+      font-family: Inter, Arial, Helvetica, sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(124,92,255,0.25), transparent 35%),
+        radial-gradient(circle at bottom right, rgba(30,214,168,0.18), transparent 30%),
+        linear-gradient(180deg, #090d1a 0%, #0b1020 100%);
+      color: var(--text);
+      line-height: 1.6;
+    }
 
-/* ✨ 金色標題 */
-h1{
-  font-size:clamp(32px,5vw,68px);
-  font-weight:900;
-  letter-spacing:.03em;
-  background:linear-gradient(90deg,#FFD700,#FFC107,#FFB300);
-  -webkit-background-clip:text;
-  -webkit-text-fill-color:transparent;
-  text-shadow:0 0 12px rgba(255,215,0,0.4);
-  margin-bottom:10px;
-}
+    a { color: inherit; text-decoration: none; }
 
-/* ✨ 金色副標 */
-p{
-  font-size:clamp(18px,2vw,28px);
-  background:linear-gradient(90deg,#FFE082,#FFD54F);
-  -webkit-background-clip:text;
-  -webkit-text-fill-color:transparent;
-  margin-bottom:22px;
-}
+    .container {
+      width: min(92%, var(--max));
+      margin: 0 auto;
+    }
 
-.banner-wrap{
-  width:100%;
-  max-width:750px;
-  margin:0 auto 28px;
-  border-radius:18px;
-  overflow:hidden;
-  box-shadow:0 10px 30px rgba(255,255,255,.06);
-}
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(14px);
+      background: rgba(11, 16, 32, 0.72);
+      border-bottom: 1px solid var(--line);
+    }
 
-.banner{
-  display:block;
-  width:100%;
-  height:auto;
-  aspect-ratio:750/600;
-  object-fit:contain;
-  background:#000;
-}
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 0;
+    }
 
-/* 🔥 彩虹流光按鈕升級 */
-.cta{
-  position:relative;
-  display:inline-block;
-  padding:3px;
-  border-radius:999px;
-  text-decoration:none;
-  background:linear-gradient(90deg,#ff0000,#ff7a00,#ffee00,#00ff85,#00c3ff,#7a00ff,#ff00c8,#ff0000);
-  background-size:300% 100%;
-  animation:flow 2.5s linear infinite;
-}
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+      letter-spacing: 0.2px;
+    }
 
-.cta span{
-  display:inline-block;
-  background:#000;
-  color:#FFD700;
-  padding:16px 36px;
-  border-radius:999px;
-  font-size:18px;
-  font-weight:900;
-  letter-spacing:.08em;
-}
+    .brand-badge {
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      box-shadow: var(--shadow);
+      font-weight: 900;
+    }
 
-.cta:hover span{
-  background:#050505;
-  color:#fff;
-}
+    .nav-links {
+      display: flex;
+      gap: 24px;
+      align-items: center;
+      color: var(--muted);
+      font-size: 0.96rem;
+    }
 
-@keyframes flow{
-  0%{background-position:0% 50%}
-  100%{background-position:300% 50%}
-}
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 14px 22px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      font-weight: 700;
+      transition: 0.25s ease;
+      cursor: pointer;
+    }
 
-</style>
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent), #5f91ff);
+      color: white;
+      box-shadow: 0 14px 30px rgba(124, 92, 255, 0.28);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 18px 36px rgba(124, 92, 255, 0.35);
+    }
+
+    .btn-secondary {
+      border-color: var(--line);
+      background: rgba(255,255,255,0.03);
+      color: var(--text);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255,255,255,0.07);
+      transform: translateY(-2px);
+    }
+
+    .hero {
+      padding: 84px 0 54px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 34px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid var(--line);
+      color: #d8def7;
+      font-size: 0.92rem;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      line-height: 1.05;
+      margin: 0 0 18px;
+      letter-spacing: -0.03em;
+    }
+
+    .hero p {
+      color: var(--muted);
+      font-size: 1.08rem;
+      max-width: 700px;
+      margin: 0 0 28px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 30px;
+    }
+
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+
+    .stat {
+      padding: 18px;
+      border-radius: 18px;
+      background: var(--card);
+      border: 1px solid var(--line);
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 1.35rem;
+      margin-bottom: 5px;
+    }
+
+    .stat span {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .hero-card {
+      padding: 28px;
+      border-radius: var(--radius);
+      background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.04));
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      inset: auto -40px -40px auto;
+      width: 170px;
+      height: 170px;
+      background: radial-gradient(circle, rgba(124,92,255,0.55), transparent 60%);
+      filter: blur(8px);
+    }
+
+    .screen {
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: #0c1327;
+      overflow: hidden;
+    }
+
+    .screen-top {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 14px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      background: rgba(255,255,255,0.03);
+    }
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.45);
+    }
+
+    .screen-body {
+      padding: 18px;
+      display: grid;
+      gap: 16px;
+    }
+
+    .metric-box {
+      padding: 16px;
+      border-radius: 16px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .metric-title {
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin-bottom: 8px;
+    }
+
+    .metric-value {
+      font-size: 1.5rem;
+      font-weight: 800;
+    }
+
+    .bars {
+      display: grid;
+      gap: 10px;
+    }
+
+    .bar {
+      height: 10px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.08);
+      overflow: hidden;
+    }
+
+    .bar > span {
+      display: block;
+      height: 100%;
+      border-radius: inherit;
+      background: linear-gradient(90deg, var(--accent), var(--accent-2));
+    }
+
+    section {
+      padding: 36px 0;
+    }
+
+    .section-head {
+      max-width: 720px;
+      margin-bottom: 24px;
+    }
+
+    .section-head h2 {
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      margin: 0 0 10px;
+      letter-spacing: -0.02em;
+    }
+
+    .section-head p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .card-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 16px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 18px;
+      background: linear-gradient(135deg, rgba(124,92,255,0.22), rgba(30,214,168,0.18));
+      border: 1px solid rgba(255,255,255,0.1);
+      font-size: 1.3rem;
+    }
+
+    .card h3 {
+      margin: 0 0 10px;
+      font-size: 1.15rem;
+    }
+
+    .card p,
+    .card li {
+      color: var(--muted);
+    }
+
+    .check-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 12px;
+    }
+
+    .check-list li {
+      position: relative;
+      padding-left: 28px;
+    }
+
+    .check-list li::before {
+      content: "✔";
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: var(--accent-2);
+      font-weight: 700;
+    }
+
+    .cta {
+      margin: 28px 0 60px;
+    }
+
+    .cta-box {
+      border-radius: 28px;
+      padding: 34px;
+      background:
+        linear-gradient(135deg, rgba(124,92,255,0.20), rgba(95,145,255,0.12)),
+        rgba(255,255,255,0.05);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .cta-box h2 {
+      margin: 0 0 8px;
+      font-size: clamp(1.7rem, 4vw, 2.5rem);
+    }
+
+    .cta-box p {
+      margin: 0;
+      color: var(--muted);
+      max-width: 700px;
+    }
+
+    footer {
+      padding: 24px 0 42px;
+      color: var(--muted);
+      border-top: 1px solid var(--line);
+    }
+
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid,
+      .grid-3 {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-stats {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        padding-top: 54px;
+      }
+
+      .cta-box {
+        padding: 26px;
+      }
+    }
+  </style>
 </head>
-
 <body>
-<main class="container">
+  <a href="https://t.me/gadspro2000" target="_blank" rel="noopener noreferrer" style="position:fixed; right:20px; bottom:20px; z-index:99; display:inline-flex; align-items:center; gap:10px; padding:14px 18px; border-radius:999px; background:linear-gradient(135deg, var(--accent), #5f91ff); color:#fff; font-weight:800; box-shadow:0 18px 35px rgba(0,0,0,0.32); border:1px solid rgba(255,255,255,0.14);">✈ Telegram</a>
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a href="#top" class="brand">
+        <img src="logo.png" alt="GameAds Pro Logo" style="height:42px; border-radius:10px;">
+        <span>GameAds Pro</span>
+      </a>
+      <div class="nav-links">
+        <a href="https://t.me/gadspro2000" target="_blank" rel="noopener noreferrer">Telegram</a>
+        <a href="#services">Services</a>
+        <a href="#why-us">Why Us</a>
+        <a href="#contact">Contact</a>
+        <a href="#contact" class="btn btn-primary">Get Started</a>
+      </div>
+    </div>
+  </nav>
 
-<h1>Welcome to M89</h1>
-<p>Brand New Interactive Experience</p>
+  <header class="hero" id="top">
+    <div class="container hero-grid">
+      <div>
+        <div class="eyebrow">🚀 Growth Marketing for Gaming Brands</div>
+        <h1>Scale your game with ads that actually perform.</h1>
+        <p>
+          We specialize in high-performance advertising for gaming brands. From precise targeting to creative optimization,
+          we help you reach the right players and maximize your ROI.
+        </p>
+        <div class="hero-actions">
+          <a href="#contact" class="btn btn-primary">Let’s Work Together</a>
+          <a href="#services" class="btn btn-secondary">View Services</a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat">
+            <strong>Multi-Platform</strong>
+            <span>Facebook, TikTok, and Google campaign management</span>
+          </div>
+          <div class="stat">
+            <strong>Data-Driven</strong>
+            <span>Performance insights backed by strategy and testing</span>
+          </div>
+          <div class="stat">
+            <strong>Conversion-Focused</strong>
+            <span>Built to improve acquisition quality and ROI</span>
+          </div>
+        </div>
+      </div>
 
-<div class="banner-wrap">
-  <picture>
-    <source srcset="banner.webp" type="image/webp">
-    <img class="banner" src="banner-optimized.jpg" alt="M89 banner">
-  </picture>
-</div>
+      <div class="hero-card">
+        <div class="screen">
+          <div class="screen-top">
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+          </div>
+          <div class="screen-body">
+            <div class="metric-box">
+              <div class="metric-title">Campaign Performance</div>
+              <div class="metric-value">ROI Growth 📈</div>
+            </div>
+            <div class="metric-box">
+              <div class="metric-title">Top Channels</div>
+              <div class="bars">
+                <div class="bar"><span style="width: 88%"></span></div>
+                <div class="bar"><span style="width: 74%"></span></div>
+                <div class="bar"><span style="width: 67%"></span></div>
+              </div>
+            </div>
+            <div class="metric-box">
+              <div class="metric-title">Focus</div>
+              <div class="metric-value">Right Players. Better Results.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
 
-<a class="cta" href="https://fbads.m8989.net/login?id=register" target="_blank">
-  <span>JOIN&GET20</span>
-</a>
+  <section id="services">
+    <div class="container">
+      <div class="section-head">
+        <h2>What we do</h2>
+        <p>Performance marketing tailored for gaming brands that want stronger player acquisition, better conversion quality, and scalable growth.</p>
+      </div>
+      <div class="grid-3">
+        <article class="card">
+          <div class="card-icon">🎯</div>
+          <h3>Precise Audience Targeting</h3>
+          <p>We build campaigns around the right players using strategic targeting, segmentation, and testing to improve acquisition efficiency.</p>
+        </article>
+        <article class="card">
+          <div class="card-icon">📊</div>
+          <h3>Data-Driven Strategy</h3>
+          <p>Every campaign is guided by performance signals, creative insights, and continuous optimization so decisions are based on results, not guesses.</p>
+        </article>
+        <article class="card">
+          <div class="card-icon">⚡</div>
+          <h3>Creative Optimization</h3>
+          <p>We refine ad messaging and creatives to improve engagement, conversion rates, and overall campaign performance across every major channel.</p>
+        </article>
+      </div>
+    </div>
+  </section>
 
-</main>
+  <section id="why-us">
+    <div class="container">
+      <div class="section-head">
+        <h2>Why GameAds Pro</h2>
+        <p>We focus on the channels, strategy, and campaign structure that matter most for gaming growth.</p>
+      </div>
+      <div class="grid-3">
+        <article class="card">
+          <h3>Multi-Platform Ads</h3>
+          <ul class="check-list">
+            <li>Facebook ads for broad reach and retargeting</li>
+            <li>TikTok ads for creative-first user acquisition</li>
+            <li>Google ads for intent and scalable demand capture</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>Built for Performance</h3>
+          <ul class="check-list">
+            <li>Conversion-focused campaign structures</li>
+            <li>Ongoing testing and optimization</li>
+            <li>Clear direction for ROI improvement</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>Simple, Professional Delivery</h3>
+          <ul class="check-list">
+            <li>Clean brand presentation</li>
+            <li>Clear value proposition</li>
+            <li>Designed to convert visitors into leads</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <div class="section-head">
+        <h2>Get in touch</h2>
+        <p>Tell us about your game, target market, and ad goals. We’ll help you plan a campaign that fits your growth objectives.</p>
+      </div>
+      <div class="grid-3" style="grid-template-columns: 1.1fr 0.9fr; align-items: start;">
+        <div class="card">
+          <h3>Send your project details</h3>
+          <form action="https://formsubmit.co/gadspro2000@gmail.com" method="POST" style="display:grid; gap:14px; margin-top:16px;">
+            <input type="hidden" name="_subject" value="New Lead from GameAds Pro Website">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_template" value="table">
+            <input type="text" name="name" placeholder="Your Name" required style="width:100%; padding:14px 16px; border-radius:14px; border:1px solid rgba(255,255,255,0.12); background:rgba(255,255,255,0.04); color:#fff; font:inherit;">
+            <input type="email" name="email" placeholder="Your Email" required style="width:100%; padding:14px 16px; border-radius:14px; border:1px solid rgba(255,255,255,0.12); background:rgba(255,255,255,0.04); color:#fff; font:inherit;">
+            <input type="text" name="company" placeholder="Game / Brand Name" style="width:100%; padding:14px 16px; border-radius:14px; border:1px solid rgba(255,255,255,0.12); background:rgba(255,255,255,0.04); color:#fff; font:inherit;">
+            <textarea name="message" rows="6" placeholder="Tell us about your game, target countries, budget, and goals" required style="width:100%; padding:14px 16px; border-radius:14px; border:1px solid rgba(255,255,255,0.12); background:rgba(255,255,255,0.04); color:#fff; font:inherit; resize:vertical;"></textarea>
+            <button type="submit" class="btn btn-primary" style="border:none; width:fit-content;">Send Inquiry</button>
+          </form>
+        </div>
+        <div class="card">
+          <h3>Contact channels</h3>
+          <ul class="check-list" style="margin-top:16px;">
+            <li>Email: gadspro2000@gmail.com</li>
+            <li>Telegram: @gadspro2000</li>
+            <li>Fast response for campaign inquiries</li>
+          </ul>
+          <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:22px;">
+            <a class="btn btn-primary" href="https://t.me/gadspro2000" target="_blank" rel="noopener noreferrer">Message on Telegram</a>
+            <a class="btn btn-secondary" href="mailto:gadspro2000@gmail.com">Email Us</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta" id="cta-end">
+    <div class="container">
+      <div class="cta-box">
+        <div>
+          <h2>Let’s scale your game to the next level 🚀</h2>
+          <p>Ready to grow your gaming brand with smarter advertising? Let’s build high-performance campaigns that reach the right players and deliver stronger results.</p>
+        </div>
+        <a class="btn btn-primary" href="mailto:gadspro2000@gmail.com">Contact Us</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container footer-inner">
+      <div>© 2000-2026 GameAds Pro. All rights reserved.</div>
+      <div>Gaming performance marketing • Facebook • TikTok • Google</div>
+    </div>
+        <div>Telegram: @gadspro2000</div>
+    </div>
+  </footer>
 </body>
 </html>
